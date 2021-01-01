@@ -1,12 +1,33 @@
+from recipe import *
+import os
+import pytest
 
-with open("recipe_list.txt", newline='') as file:
-	recipe_index = file.readlines()
+#String -> String
+#removes the extension from the filename
+def remove_ex(str):
+	result = ""
+	for i in range(0, len(str)):
+		if(str[i] != '.'):
+			result += str[i]
+		else:
+			return result
+	return result
 
-index = 0
-for val in recipe_index:
-	recipe_index[index] = val.strip()
-	index += 1
+#test
+assert remove_ex("test.text") == "test"
+assert remove_ex("") == ""
+assert remove_ex("none") == "none"
 
+list_recipe = []
+
+for filename in os.listdir("recipes"):
+	#assumes file name is recipe name
+	rec = Recipe(remove_ex(filename)) 
+	rec.recipe_read("recipes/" + filename)
+	list_recipe.append(rec)
+
+for i in list_recipe:
+	print(i.to_string())
 
 
 
