@@ -40,7 +40,7 @@ for rec in list_recipe:
 #checking valid recipe
 recipename = None
 while(recipename == None):
-	recipename = input("\nchoose from recipes:")
+	recipename = input("\nChoose from recipes:")
 	if(recipename in names):
 		break
 	else:
@@ -60,10 +60,12 @@ list_recipe.remove(recipe)
 list_recipe = sorted(list_recipe, key=lambda r: r.in_common(recipe))
 
 #outputs the recipes that are most similar
-result = []
+amount = -1
+while(amount < 0 or amount > len(list_recipe) + 1):
+	amount = int(input("How many recipes including this one?"))
 
-amount = input("How many recipes?")
-for i in range(0, amount):
+result = []
+for i in range(1, amount):
 	result.append(list_recipe.pop())
 
 print("\nsimilar recipes:")
@@ -72,8 +74,11 @@ for r in result:
 	print(r.to_string())
 
 #generates a shopping list
-print("\nNecessary ingredients/amounts:")
 
+#adding the choosen recipe back into the result
+result.append(recipe)
+
+#puts common ingredients into a dictionary
 ingredients = {} 
 for r in result:
 	for i in r.ingredient:
@@ -83,11 +88,24 @@ for r in result:
 		else:
 			ingredients[i.name] = str(i.amount) + " " + i.denom + " "
 
-for i in ingredients.keys():
-	print(i + ": ", end = "")
-	print(ingredients[i])
+#outputting to file and printing ingredients
+with open("output.txt", "w") as file:
+	file.write("Recipes:")
+	print("\nRecipes: ")
+	for r in result:
+		file.write(r.name + " ")
+		print(r.name + " ", end = "")
+	print("")
 
-input("type anything to quit")
+	file.write("\n\nIngredients: \n")
+	print("\ningredients:")
+	for i in ingredients.keys():
+		file.write(i + ": ")
+		file.write(ingredients[i])
+		file.write("\n")
+		print(i + ":"  + ingredients[i])
+
+input("\ntype anything to quit")
 
 
 
