@@ -56,8 +56,8 @@ for r in list_recipe:
 #removing the choosen recipe from the list
 list_recipe.remove(recipe)
 
-#sorts in order from least similar to most similar
-list_recipe = sorted(list_recipe, key=lambda r: r.in_common(recipe))
+#sorts in increasing order of % similar
+list_recipe = sorted(list_recipe, key=lambda r: (r.in_common(recipe)/len(r.ingredient)))
 
 #outputs the recipes that are most similar
 amount = -1
