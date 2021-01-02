@@ -1,0 +1,7 @@
+link : memory
+# black pepper
+gravy-packet 1 unit
+chicken-breast 1 unit
+broccoli 1 cup
+carrot 1 cup
+egg-noodle 2 cup 

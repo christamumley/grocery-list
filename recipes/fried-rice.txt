@@ -1,0 +1,7 @@
+link : memory
+chicken-broth 1 cup 
+frozen-veg 2 cups
+egg 1 unit
+jasmine-rice 1 cup
+teriyaki-sauce .5 cup
+onion .5 unit

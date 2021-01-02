@@ -1,0 +1,5 @@
+link : memory 
+teriyaki-sauce .25 cup 
+onion .25 unit 
+chicken-breast 1 unit
+frozen-veg 3 cups 

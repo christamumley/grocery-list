@@ -1,17 +1,20 @@
-Recipes:vegetable-paella ratatouille easy-coconut-curry 
+Recipes:vegetable-paella southwestern-rice enchiladas 
 
 Ingredients: 
-yellow-onion: 1.0 unit  + 1.0 unit  + 0.5 unit 
-bell-pepper: 2.0 unit  + 1.0 unit 
-garlic: 2.0 cloves  + 2.0 cloves  + 4.0 cloves 
+yellow-onion: 1 unit  + .5 unit  + .5 unit 
+bell-pepper: 2 unit 
+garlic: 2 cloves  + 2 cloves  + 3 cloves 
 frozen-veg: 1.5 cup 
-tomato: 1.0 can  + 1.0 pound  + 0.25 cup 
-brown-rice: 1.0 cup 
-chicken-broth: 3.5 cup  + 1.0 cup 
-basil-leaves: 0.25 cup 
-zucchini: 1.5 pound 
-eggplant: 1.5 pound 
-broccoli: 0.5 cup 
-carrot: 0.5 cup 
-snow-pea: 0.3 cup 
-coconut-milk: 2.0 cans 
+tomato: 1 can  + 1 can  + 1 can 
+brown-rice: 1 cup  + 2 cups 
+chicken-broth: 3.5 cup  + 1 can 
+white-rice: 1 cup 
+green-pepper: 1 unit  + 1 unit 
+corn: 2 cups 
+black-beans: 1 can  + 1 can 
+avocado: 1 unit 
+hot-sauce: .25 cup 
+flour-tortillas: 8 unit 
+salsa: 1 cup 
+shredded-cheese: 1 cup 
+cilantro: 3 tbsp 

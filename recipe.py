@@ -14,7 +14,7 @@ assert intersect(["hi", "1", "4"], ["hi", "1", "f"]) == ["hi", "1"]
 class Ingredient:
 	def __init__(self, name, amount, denom):
 		self.name = str(name)
-		self.amount = float(amount)
+		self.amount = amount
 		self.denom = str(denom)
 
 	#Recipe -> String
@@ -56,8 +56,12 @@ class Recipe:
 			if(line[0] == "link" or line[0] == "#"):
 				continue
 			#check if ingredients are complete
-			if(len(line) < 3): 
-				raise Exception("Incomplete Ingredient in file " + filename + " at line " + str(index + 1))
+			try:
+				if(len(line) < 3): 
+					raise Exception("Incomplete Ingredient in file " + filename + " at " + str(val))
+			except Exception as ex:
+				print(ex)
+				input()
 			#add ingredient to list
 			self.ingredient.append(Ingredient(line[0], line[1], line[2]))
 

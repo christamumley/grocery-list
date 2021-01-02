@@ -29,13 +29,14 @@ for filename in os.listdir("recipes"):
 	list_recipe.append(rec)
 
 #printing recipe names 
-i = 0; 
+i = 1; 
 names = []
 for rec in list_recipe:
 	names.append(rec.name)
 	print(rec.name + " ", end="")
-	if(i == 5):
-		print("\n")
+	if(i % 6 == 0):
+		print("")
+	i += 1
 
 #checking valid recipe
 recipename = None
