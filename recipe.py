@@ -1,5 +1,15 @@
 import pytest
 
+#[list of x] [list of x] -> [list of x]
+#returns a list that is the intersection of both lists
+def intersect(l1, l2):
+	return [val for val in l1 if val in l2]
+
+#test
+assert intersect([1,2,3], [1,3]) == [1,3]
+assert intersect([9],[]) == []
+assert intersect(["hi", "1", "4"], ["hi", "1", "f"]) == ["hi", "1"]
+
 #Ingredient that has a name, amount, and amount denomination 
 class Ingredient:
 	def __init__(self, name, amount, denom):
@@ -29,17 +39,16 @@ class Recipe:
 
 		#opening file
 		with open(filename) as file:
-			recipe_index = file.readlines()
+			recipe_file = file.readlines()
 
 		#reseting the ingredient list
 		self.ingredient = []
 
-		index = 0
-		for val in recipe_index:
+		for val in recipe_file:
 			#remove return characters
-			recipe_index[index] = val.strip()
+			val = val.strip()
 			#split into individual words
-			line = recipe_index[index].split()
+			line = val.split()
 			#if line empty
 			if(len(line) == 0):
 				continue
@@ -51,8 +60,6 @@ class Recipe:
 				raise Exception("Incomplete Ingredient in file " + filename + " at line " + str(index + 1))
 			#add ingredient to list
 			self.ingredient.append(Ingredient(line[0], line[1], line[2]))
-
-			index += 1
 
 	#Recipe -> Recipe 
 	#adds ingredient to the ingredient list
@@ -70,27 +77,8 @@ class Recipe:
 	#takes in two recipes and returns the number of
 	#Ingredients that the two recipes have in common
 	def in_common(self, recipe):
-		return_num = 0
 
-		index = 0
-		for i in self.ingredient:
-			i2 = recipe.ingredient[index]
+		names1 = [r1.name for r1 in self.ingredient]
+		names2 = [r2.name for r2 in recipe.ingredient]
 
-			if(i.name == i2.name):
-				return_num += 1
-
-			index += 0
-
-		return return_num
-
-
-	#String->File
-	#takes in a String representing the file to be
-	#written, writes 
-	#def write(filename):
-
-#Examples + testing
-#------------------------------------------------------------------
-#Recipe("test-toast")
-
-#------------------------------------------------------------------
+		return len(intersect(names1, names2))
